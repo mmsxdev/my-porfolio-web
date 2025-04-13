@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tema claro */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 40%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224.3 76.3% 48%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 226 64% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 226 64% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 27% 16%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Glass effect for cards - modo claro e escuro */
+  .glass {
+    @apply backdrop-blur-md border shadow-lg;
+  }
+
+  .dark .glass {
+    @apply bg-slate-800/70 border-slate-700/50;
+  }
+
+  .light .glass {
+    @apply bg-white/70 border-slate-200/50;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-600;
+  }
+
+  /* Typing animation */
+  .typing-text {
+    @apply overflow-hidden whitespace-nowrap border-r-4 border-purbg-purple-600 pr-1;
+    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  }
+
+  /* Skill bar animation */
+  .skill-bar {
+    @apply relative h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden;
+  }
+
+  .skill-progress {
+    @apply absolute top-0 left-0 h-full bg-purple-600 origin-left;
+    transition: transform 1s ease-out;
+    transform: scaleX(0);
+  }
+
+  .skill-visible .skill-progress {
+    transform: scaleX(1);
+  }
+
+  /* Card hover effects */
+  .project-card {
+    @apply transition-all duration-300 hover:shadow-[0_0_25px_rgba(56,189,248,0.3)] hover:-translate-y-2;
+  }
+
+  .skill-card {
+    @apply transition-all duration-300 cursor-pointer border border-slate-200 dark:border-slate-700/50;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .skill-card:hover {
+    @apply shadow-[0_0_25px_rgba(56,189,248,0.3)];
+    transform: rotateY(10deg);
+  }
+
+  /* WhatsApp button pulse */
+  .whatsapp-btn {
+    @apply animate-pulse shadow-[0_0_15px_rgba(56,189,248,0.5)];
+  }
+}
