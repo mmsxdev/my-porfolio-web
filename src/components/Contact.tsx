@@ -13,9 +13,22 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { name: "GitHub", url: "#", icon: Github },
-    { name: "LinkedIn", url: "#", icon: Linkedin },
-    { name: "Instagram", url: "#", icon: Instagram },
+    { name: "GitHub", url: "https://github.com/mmsxdev", icon: Github },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/miguel-hju-24189a2b8/",
+      icon: Linkedin,
+    },
+    {
+      name: "Instagram Pessoal",
+      url: "https://www.instagram.com/miguelmsx7",
+      icon: Instagram,
+    },
+    {
+      name: "Instagram Profissional",
+      url: "https://www.instagram.com/msx.dev",
+      icon: Instagram,
+    },
   ];
 
   return (
