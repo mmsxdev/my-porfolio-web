@@ -28,3 +28,7 @@ Sou um estudante de engenharia de software, apaixonado por tecnologia e desenvol
 📄 README.md
 📄 package.json
 ```
+
+### 🔗 Acesse a aplicação:
+[👉 Meu Portfólio (Vercel)](https://msxdev.vercel.app//)  
+Deploy realizado de forma gratuita usando **Vercel**.
