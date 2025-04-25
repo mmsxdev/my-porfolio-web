@@ -28,8 +28,8 @@ const projects: Project[] = [
       "Vercel",
       "Render",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/mmsxdev/barber-project",
+    live: "https://barber-project-nine.vercel.app/",
   },
   {
     id: 2,
@@ -46,8 +46,8 @@ const projects: Project[] = [
     description:
       "Site moderno e futurista criado para refletir minha identidade como desenvolvedor.",
     tags: ["React", "HTML5", "CSS3", "JavaScript", "SEO"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/mmsxdev/my-porfolio-web",
+    live: "msxdev.vercel.app",
   },
   {
     id: 4,
@@ -55,8 +55,8 @@ const projects: Project[] = [
     description:
       "Aplicação prática para fixar fundamentos de front-end e lógica.",
     tags: ["React", "JavaScript", "HTML", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/mmsxdev/To-do-List-React",
+    live: "https://to-do-list-react-weld-xi.vercel.app/",
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const projects: Project[] = [
     description:
       "Coleção de exercícios em Portugol e Java para treinar lógica de programação.",
     tags: ["Portugol", "Java", "Algoritmos"],
-    github: "#",
+    github: "https://github.com/mmsxdev/Logica-de-programa-o-com-java",
   },
 ];
 
