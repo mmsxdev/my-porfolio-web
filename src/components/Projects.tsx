@@ -5,56 +5,66 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   tags: string[];
   github?: string;
   live?: string;
 }
 
+// Atualize as imagens, links de github e live conforme necessário
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "Barbearia Inteligente",
     description:
-      "Uma plataforma completa de e-commerce com sistema de pagamento, gestão de produtos e área do cliente.",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      "Sistema completo para barbearias com foco em automação e gestão.",
+    tags: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Prisma",
+      "JWT",
+      "CORS",
+      "Vercel",
+      "Render",
+    ],
     github: "#",
     live: "#",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Landing Pages para Seguradora",
     description:
-      "Aplicativo de gerenciamento de tarefas com recursos de colaboração, notificações e integrações.",
-    image:
-      "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2032&q=80",
-    tags: ["React Native", "Firebase", "Redux"],
+      "Projeto com três landing pages e backend robusto para gerenciadora de seguros.",
+    tags: ["Node.js", "Express", "TypeScript", "Prisma", "Google APIs"],
     github: "#",
     live: "#",
   },
   {
     id: 3,
-    title: "Real Estate Platform",
+    title: "Meu Portfólio Web",
     description:
-      "Plataforma imobiliária com busca avançada, mapa interativo e sistema de agendamento de visitas.",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80",
-    tags: ["Next.js", "Tailwind CSS", "PostgreSQL", "MapBox"],
+      "Site moderno e futurista criado para refletir minha identidade como desenvolvedor.",
+    tags: ["React", "HTML5", "CSS3", "JavaScript", "SEO"],
     github: "#",
     live: "#",
   },
   {
     id: 4,
-    title: "Financial Dashboard",
+    title: "ToDo List",
     description:
-      "Dashboard financeiro com visualizações de dados, relatórios e previsões baseadas em IA.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    tags: ["React", "D3.js", "Node.js", "TensorFlow"],
+      "Aplicação prática para fixar fundamentos de front-end e lógica.",
+    tags: ["React", "JavaScript", "HTML", "Tailwind CSS"],
     github: "#",
     live: "#",
+  },
+  {
+    id: 5,
+    title: "Exercícios de Lógica",
+    description:
+      "Coleção de exercícios em Portugol e Java para treinar lógica de programação.",
+    tags: ["Portugol", "Java", "Algoritmos"],
+    github: "#",
   },
 ];
 
@@ -94,20 +104,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
         transition: isHovered ? "none" : "transform 0.5s ease-out",
       }}
     >
-      <div className="h-48 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transform transition-transform duration-500"
-          style={{ transform: `scale(${isHovered ? 1.1 : 1})` }}
-        />
-      </div>
+      {project.image && (
+        <div className="h-48 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transform transition-transform duration-500"
+            style={{ transform: `scale(${isHovered ? 1.1 : 1})` }}
+          />
+        </div>
+      )}
 
       <div className="p-6">
-        <h3 className="text-xl font-bold  text-slate-800 dark:text-slate-300 mb-2">
+        <h3 className="text-xl font-bold text-slate-800 dark:text-slate-300 mb-2">
           {project.title}
         </h3>
-        <p className=" text-slate-800 dark:text-slate-300 text-sm mb-4">
+        <p className="text-slate-800 dark:text-slate-300 text-sm mb-4">
           {project.description}
         </p>
 
@@ -136,7 +148,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.live && (
             <a
               href={project.live}
-              className="flex items-center  text-slate-800 dark:text-slate-300 hover:text-purple-300 transition-colors"
+              className="flex items-center text-slate-800 dark:text-slate-300 hover:text-purple-300 transition-colors"
             >
               <ExternalLink size={16} className="mr-1" />
               <span>Demo</span>
